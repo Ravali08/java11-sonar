@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from Git
-                git 'https://github.com/Ravali08/java11-sonar.git'
+                git branch: 'main', url: 'https://github.com/Ravali08/java11-sonar.git'
             }
         }
         
