@@ -24,7 +24,6 @@ pipeline {
                 sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-sonar -Dsonar.host.url=http://15.206.66.48:9000 -Dsonar.login=sqp_adb5940747fd2dfcccdb77cc7b20b174dfa67af8 -X"
                 }
             }
-        }
 
         stage('Push to DockerHub') {
             steps {
@@ -34,7 +33,6 @@ pipeline {
                     }
                 }
             }
-        }
 
         stage('Deploy to DockerHub') {
             steps {
