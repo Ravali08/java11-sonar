@@ -25,6 +25,7 @@ pipeline {
                     sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-sonar"
                 }
             }
+        }
 
         stage('Push to DockerHub') {
             steps {
