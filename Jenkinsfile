@@ -21,7 +21,8 @@ pipeline {
         stage('Test with SonarQube') {
             steps {
                 // Run tests and analyze with SonarQube
-                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-sonar -Dsonar.host.url=http://3.108.194.10:9000 -Dsonar.login=sqp_adb5940747fd2dfcccdb77cc7b20b174dfa67af8 -X"
+                withSonarQubeEnv('sonar') { 
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=demo-sonar"
                 }
             }
 
